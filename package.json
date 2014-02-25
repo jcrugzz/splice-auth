@@ -1,7 +1,7 @@
 {
   "name": "splice-auth",
   "description": "splice auth into a url if it, expects a string or a url.parsed url",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Jarrett Cruger <jcrugzz@gmail.com>",
   "repository": {
     "url": "git://github.com/jcrugzz/splice-auth.git"
