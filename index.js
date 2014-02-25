@@ -26,7 +26,7 @@ module.exports = function (url, auth) {
   str = parsed[0] + '://' + auth + '@' + parsed[1];
   parsed = parse(str);
 
-  return isString ? replace(parsed.href); : parsed;
+  return isString ? replace(parsed.href) : parsed;
 };
 
 function replace (href) {
