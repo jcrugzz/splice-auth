@@ -9,17 +9,26 @@ module.exports = function (url, auth) {
   if (!url) {
     return null;
   }
+
   var isString = typeof url == 'string';
+
+  if (!auth) {
+    return isString ? replace(url) : url;
+  }
   var parsed = isString ? parse(url) : url;
   var str = parsed.href;
 
   if(parsed.auth || !auth) {
-    return isString ? parsed.href : parsed;
+    return isString ? replace(parsed.href) : parsed;
   }
 
   parsed = str.split('://');
   str = parsed[0] + '://' + auth + '@' + parsed[1];
   parsed = parse(str);
 
-  return isString ? parsed.href : parsed;
+  return isString ? replace(parsed.href); : parsed;
+};
+
+function replace (href) {
+  return href.replace(/\/$/, '');
 }
